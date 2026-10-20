@@ -29,8 +29,8 @@ A revealjs deck is a good way to stage a showcase: each slide is a "scene" (a li
 `scripts/capture_loop.py URL OUTPUT.mp4` drives headless Chromium, records Chrome screencast frames as high-quality JPEGs, resamples them to a constant 30 fps, and encodes with ffmpeg. In the default `loop` mode it discards the first pass (which pays the loading cost) and keeps the second pass, from one wrap to slide 1 to the next, so the clip is fully loaded and loops seamlessly.
 
 ```bash
-python3 ~/.claude/skills/quarto-revealjs-showcase/scripts/capture_loop.py http://localhost:8000/index.html out.mp4
-python3 .../capture_loop.py URL out.mp4 --mode seconds --seconds 20 --warmup 8   # fixed length, no loop needed
+python3 <skill-dir>/scripts/capture_loop.py http://localhost:8000/index.html out.mp4
+python3 <skill-dir>/scripts/capture_loop.py URL out.mp4 --mode seconds --seconds 20 --warmup 8   # fixed length, no loop needed
 ```
 
 Needs python with `playwright` and a Chromium build, plus `ffmpeg`. If `import playwright` fails, `python3` is probably resolving to a Python without it (check `which -a python3`; a pyenv shim path often has it). Serve the rendered deck over HTTP (`quarto preview`, or `python3 -m http.server --directory <dir>`) rather than `file://`.

@@ -4,7 +4,7 @@ Read **every** file in `R/`. The recurring theme: package code runs in unpredict
 
 ## Behavioral correctness: does the code do what it claims?
 
-> For the full systematic method (enumerate every function/method, audit shared internals first, run the edge-case matrix, verify by running, and fan out to subagents), follow `references/deep-code-review.md`. The notes below are the per-function checks that method builds on.
+> For the full systematic method (enumerate every function/method, audit shared internals first, run the edge-case matrix, verify by running, and fan out to sub-agents where supported), follow `references/deep-code-review.md`. The notes below are the per-function checks that method builds on.
 
 This is the most valuable part of the audit and the part only a careful reader can do. Package hygiene (below) is necessary but a package can pass R CMD check with flying colors and still compute the wrong answer. For each function, actually reason about what it does and compare that to what it promises. Findings here go in the **Correctness & CRAN** track, usually `Critical` or `Warning`, because a function that silently returns the wrong result is worse than one that errors.
 

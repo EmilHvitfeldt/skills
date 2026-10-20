@@ -71,7 +71,7 @@ Beyond individual functions, look across the whole surface:
 
 ## 7. Fan out for anything but a tiny package
 
-One agent reading dozens of files in a single pass cannot go as deep as many focused reviews. Delegate. Spawn parallel subagents, one per `*_impl.R` file, per method family, or per generic-plus-methods, each with this brief:
+One agent reading dozens of files in a single pass cannot go as deep as many focused reviews. Delegate if your agent supports sub-agents or parallel tasks (otherwise work through the same units one at a time, each with the same brief). Spawn parallel sub-agents, one per `*_impl.R` file, per method family, or per generic-plus-methods, each with this brief:
 
 > Deep-review `<file/function>`. Identify the method/algorithm it implements and the reference that defines it. Verify the implementation against that reference term by term. Run the edge-case matrix (empty, single-row, length-1, unused factor levels, NA/Inf, zero-variance, duplicates, separable, fractional args, case weights). For any bug, reproduce it with concrete numbers (run the code; compare to a `stats::` oracle or a correct sibling) and tag it Confirmed / Confirmed via repro / Suspected. Also report anything you verified as correct. Return findings with `file:line`, evidence, severity, and a specific fix.
 
