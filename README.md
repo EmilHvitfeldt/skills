@@ -6,6 +6,7 @@ My personal agent skills. Each folder is a self-contained skill following the op
 |---|---|
 | `audit-r-package` | Read-only audit of an R package: dependencies, code correctness, tests, docs, CRAN readiness |
 | `fix-quarto-extension-repos` | Prepare a Quarto extension repo for the quarto-extensions registry |
+| `html-short-video` | Build a short vertical promo video from a script with HTML/JS animation and record it to a seamless-looping MP4 |
 | `quarto-revealjs-showcase` | Build a looping Quarto revealjs deck and capture it as MP4 |
 | `tidy-pr` | Turn a messy working tree into logical commits and a GitHub PR |
 
@@ -15,10 +16,10 @@ Copy or symlink the skill folders into your agent's skills directory. For exampl
 
 ```bash
 # Claude Code
-ln -s "$PWD"/{audit-r-package,fix-quarto-extension-repos,quarto-revealjs-showcase,tidy-pr} ~/.claude/skills/
+ln -s "$PWD"/{audit-r-package,fix-quarto-extension-repos,html-short-video,quarto-revealjs-showcase,tidy-pr} ~/.claude/skills/
 
 # Other agents that read ~/.agents/skills
-ln -s "$PWD"/{audit-r-package,fix-quarto-extension-repos,quarto-revealjs-showcase,tidy-pr} ~/.agents/skills/
+ln -s "$PWD"/{audit-r-package,fix-quarto-extension-repos,html-short-video,quarto-revealjs-showcase,tidy-pr} ~/.agents/skills/
 ```
 
 Check your agent's documentation for where it looks for skills.
